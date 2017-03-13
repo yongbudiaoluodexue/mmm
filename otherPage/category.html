@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品分类 - 慢慢买比价网</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <!--引入第三方样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap/fonts/glyphicons-halflings-regular.svg">
+    <!--引入重置样式-->
+    <link rel="stylesheet/less" href="../css/base.min.css">
+    <!--引入自己的样式-->
+    <link rel="stylesheet/less" href="css/category.min.css">
+    <!--引入less.js-->
+    <script src="../lib/less/less.min.js"></script>
+</head>
+
+<body>
+    <header class="WY">
+        <div class="MMBAPP_TOP_BOX clearfix">
+            <div>
+                <a href="../index.html"></a>
+            </div>
+            <div>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="search clearfix">
+            <form action="#">
+                <input type="text" placeholder="请输入搜索内容">
+                <input type="button" value="搜索">
+            </form>
+        </div>
+    </header>
+    <section id="category">
+        <div class="panel_group "></div>
+    </section>
+    <footer>
+        <ul class="clearfix">
+            <li>
+                <a href="#">登录</a>
+            </li>
+            <li>
+                <a href="#">注册</a>
+            </li>
+            <li id="indexTop">
+                <a href="javascript:;">返回顶部 <i class="glyphicon glyphicon-arrow-up"></i> </a>
+            </li>
+        </ul>
+        <div>
+            <p>
+                <span>手机APP下载</span> 版慢慢买手机-掌上比价平台
+                <br/>m.manmanbuy.com
+            </p>
+        </div>
+    </footer>
+</body>
+<!--引入jQ-->
+<script src="../lib/jquery/jquery.js"></script>
+<!--引入bootstrap.js-->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引入template.js-->
+<script src="../lib/template/template.js"></script>
+<!--引入index-->
+<script src="js/category.min.js"></script>
+
+<!--模板-->
+<script type="text/html" id="tpl">
+    {{each result as value i }}
+    <div class="panel">
+        <div class="panel_title" data-popo={{value.titleId}}>
+            <a class="clearfix" href="javascript:;">
+                <i>{{value.title}}</i>
+                <s class="glyphicon glyphicon-menu-down"></s>
+            </a>
+        </div>
+        <ul class="panel_body"></ul>
+    </div>
+    {{/each}}
+</script>
+<script type="text/html" id="tpp">
+    {{each result as value i }}
+    <li class="col-xs-4">
+        <a href="category-product.html?categoryId={{value.categoryId}}">{{value.category}}</a>
+    </li>
+    {{/each}}
+</script>
+
+</html>

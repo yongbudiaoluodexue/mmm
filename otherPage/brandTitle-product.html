@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>平板电视哪个牌子好</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <!--bootstrap框架css-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--公用样式-->
+    <link rel="stylesheet/less" href="../css/base.min.css">
+    <!--自己的样式-->
+    <link rel="stylesheet/less" href="css/coupon-product.less">
+    <!--less.js-->
+    <script src="../lib/less/less.min.js"></script>
+    <!--jquery包-->
+    <script src="../lib/jquery/jquery.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <a href="../index.html">首页</a>&gt;
+        <a href="brandTitle.html">品牌大全</a> > 平板电视哪个牌子好
+    </div>
+    <div class="box2">
+        <div class="hz1">
+            <h3>平板电视哪个牌子好</h3>
+        </div>
+        <div class="hz2">
+            <ul class="uls">
+
+            </ul>
+        </div>
+    </div>
+    <div class="box3">
+        <a href="#">首页&gt;</a>
+        <a href="#">商城导航</a>
+    </div>
+    <div class="hd">
+        <a href="#">平板电视产品销量排行</a>
+    </div>
+    <div class="ds">
+        <ul id="salesList">
+
+        </ul>
+    </div>
+    <div class="hd">
+        <a href="#">平板电视最新评论</a>
+    </div>
+    <div class="ds">
+        <ul id="sales">
+
+        </ul>
+    </div>
+    <div class="dl">
+        <ul>
+            <a href="javascript:;">
+                <li>登录</li>
+            </a>
+            <a href="javascript:;">
+                <li>注册</li>
+            </a>
+            <a href="javascript:;">
+                <li id="brnnn"><span>↑</span>&nbsp;返回顶部</li>
+            </a>
+        </ul>
+    </div>
+    <div class="foot">
+        <a href="#">手机APP下载</a> 慢慢买手机版—掌上比价平台
+        <br/> m.manmanbuy.com
+    </div>
+</body>
+
+<!--bootstrap框架js-->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<!--template模板-->
+<script src="../lib/template/template.js"></script>
+<!--自己的js-->
+<script src="js/brandTitle-product.min.js"></script>
+<script type="text/html" id="top">
+    {{each result as value i }}
+    <li class="salesBox">
+        <a href="" title="">
+            <div class="left">{{#value.productImg}}</div>
+            <div class="right">
+                <div class="title">{{value.productName}}</div>
+                <div class="price">
+                    <em>{{value.productPrice}}</em>
+                    <span class="star">
+                        ☆☆☆☆
+                    </span>
+                </div>
+                <div class="comment">
+                    <em>{{value.productQuote}}</em>
+                    <em>{{value.productCom}}</em>
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script type="text/html" id="menuTpl">
+    {{each result as value i }}
+    <li>
+        <a href="#">
+            <em class="top">{{value.brandId}}</em>
+            <div class="inner">
+                <div class="tit">{{value.brandName}}</div>
+                <p>{{value.brandInfo}}</p>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+
+</script>
+<script type="text/html" id="mTpl">
+    {{each result as value i }}
+    <li class="Box">
+        <a href="#" title="">
+            <div class="ai">
+                <div class="left">{{#value.productImg}}</div>
+                <div class="right">
+                    <div class="title">{{value.productName}}</div>
+                </div>
+            </div>
+        </a>
+        <div class="pinl">
+
+        </div>
+    </li>
+    {{/each}}
+</script>
+
+</html>

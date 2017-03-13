@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,
+    user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet/css" href="../lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet/less" href="../css/base.min.css"/>
+    <link rel="stylesheet/less" href="css/gsproduct.css"/>
+    <script src = "../lib/less/less.min.js"></script>
+</head>
+<body>
+
+<div class= "container clearfix">
+    <!--头部-->
+    <header>
+        <a href="../index.html" class = "arrow"><</a>
+        <h3 class = title>凑单品</h3>
+
+    </header>
+    <!--菜单部分-->
+
+    <section class = "menu clearfix">
+        <div class="box" style = "padding-right:45px ;position:relative">
+
+            <ul class = "list clearfix">
+                <li class = "jd" data-switch1 = "open">
+                    <span>京东</span>
+                    <i class = "shop-arrow arrow">▼</i>
+                </li>
+
+                <li  class = "area" data-switch1 = "open">
+                    <span>华北</span>
+                    <i class = "area-arrow arrow">▼</i>
+                </li>
+
+                <li  class = "price"  data-switch1 = "open">
+                    <span>全部价格</span>
+                    <i class = "price-arrow arrow">▼</i>
+
+                </li>
+
+            </ul>
+            <a  href = "#" class = "glyphicon glyphicon-search" id = "search"></a>
+
+        </div>
+
+        <ul class = "item">
+
+        </ul>
+        <ul class = "area-item">
+
+        </ul>
+        <ul class = "price-item">
+            <li>全部价格</li>
+            <li>1-3元</li>
+            <li>3-5元</li>
+            <li>5-10元</li>
+            <li>10-15元</li>
+            <li>15元以上</li>
+        </ul>
+
+    </section>
+    <!--商品部分-->
+    <section class="goods">
+        <ul class ="clearfix">
+
+        </ul>
+
+
+    </section>
+
+
+
+</div>
+</body>
+<!--商铺部分模板-->
+<script type = "text/template" id = "shop_tpl">
+    {{each result as value i}}
+    <li data-shopId = "{{value.shopId}}" >{{value.shopName}}</li>
+    {{/each}}
+
+</script>
+
+<!--地区部分模板-->
+
+<script type = "text/template"  id = "area_tpl">
+    {{each result as value i}}
+    <li data-areaId = "{{value.areaId}}" >{{value.areaName}}</li>
+    {{/each}}
+
+</script>
+
+<!--商品部分模板-->
+<script type = "text/template" id = "goods_tpl">
+    {{each result as value i}}
+    <li>
+        <a href="#">
+            <img src = "{{value.productImg}}" alt=""  class = "goods_img"/>
+            <p style = "height:20px ;overflow:hidden ;font-size:14px">{{value.productName}}</p>
+            <span style = "color:#ff841d; font-size: 14px  ">{{value.productPrice}}</span>
+        </a>
+    </li>
+    {{/each}}
+
+</script>
+</html>
+<script src="../lib/jquery/jquery.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
+<!--<script src="lib/template/template-native.js"></script>-->
+<script src="../lib/template/template.js"></script>
+
+<script>
+
+    //菜单部分定义的函数
+    $(function() {
+
+//菜单部分定义的函数
+        function getShopData() {
+            $.ajax({
+                type: 'get',
+                url: "http://139.199.157.195:9090/api/getgsshop",
+                success: function (info) {
+                    var html = template("shop_tpl", info);
+                    $('.item').html(html);
+//               shopId = $('.item').text();
+
+                }
+            })
+        }
+
+
+        function getAreaData() {
+            $.ajax({
+                type: 'get',
+                url: "http://139.199.157.195:9090/api/getgsshoparea",
+                success: function (info) {
+                    var html = template("area_tpl", info);
+                    $('.area-item').html(html);
+//                areaId = $('.item li:nth-child(1)').text();
+//                alert(eerfff);
+                },
+//            error:function(err){
+//                console.log("errrrr",err);
+//            }
+            })
+        }
+
+        //商品部分函数
+        //    function goods(options){
+        //        $.ajax({
+        //            type:'get',
+        //            data:{
+        //                shopid:options.shopId,
+        //                areaid:options.areaId
+        //            },
+        //            url:'http://139.199.157.195:9090/api/getgsproduct',
+        //            success:function(info){
+        //                var html = template("goods_tpl",info);
+        //                $('.goods ul').html(html);
+        //
+        //                var imgWidth = $('.goods').children('.goods_img').width();
+        //                console.log($('.goods').children('.goods_img'));
+        //                console.log(imgWidth);
+        //                $('.goods').children('.goods_img').css({"height":imgWidth});
+        //            }
+        //        })
+        //    }
+
+
+        //箭头方向函数
+
+        function arrow(that) {
+            $('.list').find('.arrow').text(down_sj);
+            $('.list li').attr('data-switch1', 'open');
+            that.children('.arrow').text(up_sj)
+        }
+
+        //截取字符串中的前两个字符函数
+        function strSlice(str) {
+            var str1 = str.slice(0, 2);
+            return str1;
+        }
+
+
+        //  获取商品数据的函数
+        function getInlandCDP(shopId, areaId) {
+            $.ajax({
+                type: 'get',
+                data: {
+                    shopid: shopId,
+                    areaid: areaId
+                },
+                url: 'http://139.199.157.195:9090/api/getgsproduct',
+                success: function (res) {
+
+                    Data = res;
+                    console.log(res.result.length);
+
+                    render();
+                }
+            })
+
+        }
+
+        /*商品数据渲染函数*/
+        function render() {
+            var newData = {result: []};
+            var leng = 8;
+            console.log(Data.result.length )
+            if (Data.result.length <=8) {
+                console.log(33333333333)
+                leng = Data.result.length;
+                console.log(leng);
+            }
+            for (var i = 0; i < leng; i++) {
+
+                // 需要加载data.result的第一条数据，并且，加载完了之后
+                //要删除掉第一条数据。
+                //然后把剩下的数据都往前面移动一个位
+                // shift:从集合中把第一个元素删除，并返回这个元素的值。
+                newData.result.push(Data.result.shift());
+            }
+            var html = template("goods_tpl", newData);
+            $(".goods ul").append(html);
+            width_1  = $(".goods ul img").width();
+            console.log(width_1);
+            flag = false;
+
+            imgDOM =  $(".goods ul img");
+            imgDOM.height(width_1);
+
+
+        }
+
+
+
+
+        //商品渲染部分所需的变量
+        var areaId = 0;
+        var shopId = 0;
+        //菜单部分所需变量
+        var up_sj = "▲";
+        var down_sj = "▼";
+
+        // 切割字符串所需变量
+        var str_text;
+        var str_back;
+
+        //窗体滚动时的控制开关
+        var flag = false;
+        // 保存数据的空对象
+        var Data = {};
+        //
+        var width_1 = null;
+
+        var imgDOM = null;
+
+//    首次加载数据函数
+        function first(){
+            getInlandCDP(0, 0);
+        }
+
+
+
+        //1、点击商铺
+        $('.jd').on('click', function () {
+
+            var switch1 = $(this).attr("data-switch1");
+            if (switch1 == 'open') {
+                arrow($('.jd'));
+                $('.price-item').css({
+                    "display": 'none'
+                });
+                $('.area-item').html("");
+                getShopData();
+                $(this).attr("data-switch1", "close");
+            } else {
+                $('.item').html("");
+                $(this).attr("data-switch1", "open").children('.arrow').text(down_sj);
+            }
+
+        })
+
+
+        //2、点击地区
+        $('.area').on('click', function () {
+
+            var switch1 = $(this).attr("data-switch1");
+            if (switch1 == 'open') {
+                arrow($('.area'));
+
+                $('.price-item').css({
+                    "display": 'none'
+                })
+                $('.item').html("");
+                getAreaData();
+                $(this).attr("data-switch1", "close");
+
+            } else {
+
+                $('.area-item').html("");
+                $(this).attr("data-switch1", "open").children('.arrow').text(down_sj);
+            }
+
+
+        })
+
+        //3、点击价格部分
+        $('.price').on('click', function () {
+
+            var switch1 = $(this).attr("data-switch1");
+            if (switch1 == 'open') {
+                arrow($('.price'));
+                $('.item').html("");
+                $('.area-item').html("");
+                $('.price-item').css({
+                    "display": 'block'
+                })
+                $(this).attr("data-switch1", "close");
+            } else {
+                $('.price-item').css({
+                    "display": 'none'
+                })
+                $(this).attr("data-switch1", "open").children('.arrow').text(down_sj);
+            }
+
+        })
+
+
+
+
+
+//首次渲染数据
+        first();
+
+
+
+//4、点击商铺部分的每一个li标签
+        $('.item').on('click','li',function(){
+            $('.goods').children('ul').html("");
+            shopId =  $(this).attr('data-shopId');
+            str_text = $(this).text();
+
+            $(this).parent('.item').html("")
+            $('.jd').children('.arrow').text(down_sj)
+                .parent('.jd').attr('data-switch1','open');
+
+            $('.jd').children('span').text(str_text );
+
+
+            //请求数据
+            getInlandCDP(shopId, areaId);
+
+
+        })
+
+
+//5、点击地区部分的每一个li标签 渲染页面
+        $('.area-item').on('click', 'li', function () {
+
+            $('.goods').children('ul').html("");
+            areaId = $(this).attr('data-areaId');
+            console.log(areaId);
+            str_text = $(this).text();
+
+            $(this).parent('.area-item').html("");
+            $('.area').children('.arrow').text(down_sj)
+                .parent('.area').attr('data-switch1', 'open');
+            str_back = strSlice(str_text);
+            $('.area').children('span').text(str_back);
+
+
+
+            //请求数据
+            getInlandCDP(shopId, areaId);
+
+
+        })
+
+
+
+//6、点击价格部分的每一个li标签
+        $('.price-item').on('click', 'li', function () {
+
+            $('.goods').children('ul').html("");
+            $('.price-item').css({
+                "display": 'none'
+            })
+
+
+            $('.price').children('.arrow').text(down_sj)
+                .parent('.price').attr('data-switch1', 'open');
+
+            str_text = $(this).text();
+            $('.price').children('span').text(str_text);
+
+
+            //请求数据
+            getInlandCDP(shopId, areaId);
+
+
+        })
+
+
+
+
+
+//懒加载
+
+        window.onscroll = function () {
+            if (Data.result.length == 0 || flag) {
+                return;
+            }
+            // 多余的总高度
+            var h=window.innerHeight;
+
+//            var height = $(".goods ul").outerHeight(true) + $(".menu").outerHeight(true)
+//                    + $("header").outerHeight(true) - h;
+            var height=$(".container").outerHeight(true)-h;
+            var disBottom = height - $(document.body).scrollTop();
+            // console.log(disBottom);
+            if (disBottom <50) {
+                console.log("加载数据")
+                flag = true;
+                render();
+            }
+        }
+// 宽高是通过宽高改变时自适应
+        window.onresize = function(){
+            // console.log();
+            imgDOM.height(imgDOM.width());
+        }
+    })
+
+
+
+
+
+
+</script>

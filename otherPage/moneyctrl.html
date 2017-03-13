@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>省钱控</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <!--bootstrap框架css-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <!--公用样式-->
+    <link rel="stylesheet/less" href="../css/base.min.css">
+    <!--自己的样式-->
+    <link rel="stylesheet/less" href="css/moneyctrl.min.css">
+    <!--less.js-->
+    <script src="../lib/less/less.min.js"></script>
+    <!--jquery包-->
+    <script src="../lib/jquery/jquery.js"></script>
+</head>
+<body>
+<!--首页头部-->
+<header class="WY">
+    <div class="MMBAPP_TOP_BOX clearfix">
+        <div>
+            <a href="../index.html"></a>
+        </div>
+        <div>
+            <a href="#"></a>
+        </div>
+    </div>
+    <div class="search clearfix">
+        <form action="#">
+            <input type="text" placeholder="请输入搜索内容">
+            <input type="button" value="搜索">
+        </form>
+    </div>
+</header>
+<div class="box">
+    <ul class="item">
+
+    </ul>
+</div>
+<div class="box2">
+    <ul>
+        <li class="fl syy"><a href="#">上一页</a></li>
+        <li class="fl">
+            <select name="" id="selectPage">
+
+            </select>
+        </li>
+        <li class="fl xyy"><a href="#">下一页</a></li>
+    </ul>
+</div>
+<div class="box3">
+    <a href="#">首页&gt;</a>
+    <a href="#">省钱控</a>
+    <a href="#"></a>
+    > 海淘折扣
+</div>
+<div class="dl">
+    <ul>
+        <a href="#">
+            <li>登录</li>
+        </a>
+        <a href="#">
+            <li>注册</li>
+        </a>
+        <a href="#" class="fhdbu">
+            <li><span>↑</span>&nbsp;返回顶部</li>
+        </a>
+    </ul>
+</div>
+<div class="foot">
+    <a href="#">手机APP下载</a>
+    慢慢买手机版—掌上比价平台<br/>
+    m.manmanbuy.com
+</div>
+</body>
+
+<!--bootstrap框架js-->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<!--template模板-->
+<script src="../lib/template/template.js"></script>
+<!--自己的js-->
+<script src="js/moneyctrl.min.js"></script>
+<script type="text/html" id="menuTpl">
+    {{each result as value i }}
+    <li>
+        <a href="inlanddiscount-details1.html?productId={{value.productId}}">
+            <div class="x">
+                {{#value.productImgSm}}
+            </div>
+            <div class="zi">
+                <div>{{value.productName}} <span class="sp1">{{value.productPinkage}}</span></div>
+                <div class="y">
+                    <span>{{value.productFrom}}</span>
+                    <span class="fr"><img src="images/f.png" alt="">&nbsp;{{value.productComCount}}</span>
+
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+</html>

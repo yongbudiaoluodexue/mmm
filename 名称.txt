@@ -1,0 +1,49 @@
+html，css，js名称一一匹配
+
+每个页面的数据已经连接上了，不要再改传数据了。自己的css样式和js在自己对应的文件里就可以改了
+
+改代码时，就在现在的这个文件里改，不要在自己之前的代码里改了
+
+首页 王勇
+   index.html
+
+比价搜索页面
+	分类页功能界面 刘俊 category.html
+	商品列表功能界面 李瑶 category-product.html
+	商品详情列表 马小杰 category-details.html
+
+
+省钱控页面
+	功能界面 康儒 moneyctrl.html
+
+
+国内折扣页面
+	国内折扣列表功能界面 李旭东 inlanddiscount.html
+	国内商品详情页 刘欢 
+
+白菜价页面
+	白菜价列表功能界面 王勇 baicaijia.html
+
+优惠劵页面
+	功能界面 马小杰 coupon.html
+	优惠劵列表页面 马小杰 coupon-product.html
+
+凑单品页面
+	功能界面 康儒 gsproduct.html
+
+商场导航界面
+	商场导航功能界面 马小杰 sitenav.html
+
+
+品牌大全页面
+	功能页面 马小杰 brandTitle.html
+	详情页面 马小杰 brandTitle-product.html
+
+
+
+
+
+
+
+
+

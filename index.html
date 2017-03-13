@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买官方网站</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <!--引入Bootstrap-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <!--引入 图标-->
+    <link rel="stylesheet" href="lib/bootstrap/fonts/glyphicons-halflings-regular.svg">
+    <!--引入 公共样式-->
+    <link rel="stylesheet" href="css/base.min.css">
+    <!--引入index.less-->
+    <link rel="stylesheet/less" href="css/index.min.css">
+    <!--引入 重置样式-->
+    <link rel="stylesheet" href="css/reset.min.css">
+</head>
+<body>
+
+    <!--首页头部-->
+    <header class="WY">
+        <div class="MMBAPP_TOP_BOX clearfix">
+            <div>
+                <a href="./index.html"></a>
+            </div>
+            <div>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="search clearfix">
+            <form action="#">
+                <input type="text" placeholder="请输入搜索内容">
+                <input type="button" value="搜索">
+            </form>
+        </div>
+    </header>
+    <nav>
+        <ul id="TopNav1" class="clearfix">
+
+        </ul>
+
+    </nav>
+    <main>
+        <div>
+            <h3>超值折扣推荐</h3>
+            <a href="#"><i></i><i></i></a>
+        </div>
+        <ul class="mediaUl container" id="productID">
+
+        </ul>
+    </main>
+
+    <section>
+        <a href="otherPage/moneyctrl.html">更多优惠信息</a>
+    </section>
+    <footer id="foorte">
+        <div>
+            <h3>品牌排行</h3>
+            <a href="#"><i></i><i></i></a>
+        </div>
+        <ul class="clearfix">
+            <li>
+                <a href="#">登录</a>
+            </li>
+            <li>
+                <a href="#">注册</a>
+            </li>
+            <li id="indexTop">
+                <a href="javascript:;">返回顶部 <i class="glyphicon glyphicon-arrow-up"></i> </a>
+            </li>
+        </ul>
+        <div>
+            <p>
+                <span>手机APP下载</span> 版慢慢买手机-掌上比价平台
+                <br/>m.manmanbuy.com
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<!--引入 JQ-->
+<script src="lib/jquery/jquery.js"></script>
+<!--引入 LESS-->
+<script src="lib/less/less.min.js"></script>
+<!--引入 template-->
+<script src="lib/template/template.js"></script>
+<!--引入 BootstrapJS-->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/index.min.js"></script>
+
+<!--模板引擎-->
+<!--导航模板-->
+<script type="text/html" id="TopNav">
+    {{ each result as value i }}
+    <li class="col-xs-3">
+        {{if i==7 }}
+        <a href="javascript:;">
+			{{else}}
+			<a href="otherPage/{{value.titlehref}}">
+				{{/if}} {{#value.img}}
+				<p>{{value.name}}</p>
+			</a>
+    </li>
+    {{/each}}
+</script>
+<!--产品模板-->
+<script type="text/html" id="product">
+    {{each result as value i}}
+    <li class="media">
+        <ul>
+            <li class="media-left">
+                <a href="otherPage/inlanddiscount-details1.html?productId={{value.productId}}">
+                    <div class="media-object">
+                        {{#value.productImgSm}}
+                    </div>
+                </a>
+            </li>
+            <li class="media-body main_position">
+                <h4 class="media-heading">{{value.productName}}<a href="otherPage/inlanddiscount-details1.html?productId={{value.productId}}">{{value.productPinkage}}</a>
+                </h4>
+                <div class="main_bottom">
+                    <p>{{value.productFrom}}| {{value.productTime}}
+                        <a href="otherPage/inlanddiscount-details1.html?productId={{value.productId}}"><s></s><em>{{
+                        regular(value.productComCount) }}</em></a>
+                    </p>
+
+                </div>
+            </li>
+        </ul>
+    </li>
+    {{/each}}
+</script>

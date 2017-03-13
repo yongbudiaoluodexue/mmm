@@ -1,0 +1,232 @@
+/*===============关于颜色的定义=======================*/
+/*===============首页头部内容部分=======================*/
+header.WY {
+  width: 100%;
+}
+header.WY .MMBAPP_TOP_BOX {
+  height: 45px;
+  background-color: #fe841d;
+}
+header.WY .MMBAPP_TOP_BOX div:nth-child(1) a {
+  float: left;
+  width: 185px;
+  height: 25px;
+  background: url("../images/header_logo.png") no-repeat center / cover;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+header.WY .MMBAPP_TOP_BOX div:nth-child(2) a {
+  float: right;
+  width: 34px;
+  height: 34px;
+  background: url("../images/header_app.png") no-repeat center / cover;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+header.WY .search {
+  width: 100%;
+  height: 35px;
+  border-bottom: 1px solid #e8e8e8;
+}
+header.WY .search form {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  top: 5px;
+}
+header.WY .search form input[type="text"] {
+  width: 90%;
+  height: 25px;
+  border-radius: 8px;
+  padding-left: 5px;
+  position: absolute;
+  left: 5px;
+  background: #f1f1f1;
+  border: none;
+}
+header.WY .search form input[type="button"] {
+  height: 25px;
+  width: 50px;
+  background: #fe841d;
+  border-radius: 8px;
+  color: #fff;
+  position: absolute;
+  right: 5px;
+  border: none;
+}
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #606060;
+}
+.aleft {
+  float: left;
+}
+.aright {
+  float: right;
+}
+.lh-head {
+  background: #ffffff;
+}
+.container {
+  margin: 0 auto;
+}
+.lh-head,
+h3,
+h4 {
+  font-weight: 800;
+}
+.lh-head h3 {
+  font-size: 18px;
+  text-align: left;
+  margin: 10px auto 5px auto;
+}
+.lh-head h4 {
+  font-size: 16px;
+  color: #ff841d;
+}
+.info {
+  font-size: 12px;
+  color: #999999;
+  line-height: 24px;
+  margin: 12px auto;
+}
+.info span a {
+  color: #4682c5;
+}
+.contens_a img {
+  padding: 60px 0 80px 0;
+}
+.imgvital {
+  float: right;
+  width: 120px;
+  margin: 12px auto auto 10px;
+  overflow: hidden;
+  display: inline-block;
+}
+.txtvital p img {
+  width: 120px;
+  float: right;
+}
+#disstorck {
+  text-align: center;
+  line-height: 38px;
+}
+#disstorck li {
+  clear: both;
+  font-size: 12px;
+  font-family: "Microsoft Yahei";
+  line-height: 20px;
+  width: 139px;
+  margin: 0 auto;
+  border-bottom: 1px dotted #c0c0c0 ;
+  text-align: left;
+}
+#disstorck li a span strong {
+  float: right;
+  color: #f28742;
+}
+.lh_btn {
+  background: #ff9000;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+.comment p:nth-child(1) {
+  padding-top: 40px;
+}
+.comments {
+  border: 1px solid #000;
+  min-height: 122px;
+}
+.comment_a {
+  width: 100%;
+  resize: none;
+  border: none;
+  padding: 0;
+}
+.comment_b {
+  height: 43px;
+  background: #ff9000;
+  float: right;
+  padding: 0 15px;
+}
+.comment_c {
+  padding: 20px 0;
+}
+.form {
+  position: relative;
+}
+.tjdp {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.userimg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.username {
+  float: left;
+}
+.time {
+  float: right;
+}
+.con {
+  width: 80%;
+  float: right;
+  font-size: 15px;
+}
+.erweima {
+  margin: 20px 10px;
+}
+.userimg img {
+  width: 50px;
+}
+.erweima img {
+  margin: 40px 10px;
+}
+.lh_link {
+  box-sizing: content-box;
+  border-top: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  width: 100%;
+  overflow: hidden;
+  line-height: 36px;
+  height: 36px;
+}
+.form {
+  position: relative;
+  border: 1px solid #cccccc;
+}
+.form .tjdp {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 100px;
+  height: 31px;
+  box-sizing: border-box;
+  color: white;
+  background: #ff9000;
+}
+#ctl00_ContentBody_txt_nr {
+  width: 100%;
+  border: none;
+}
+textarea {
+  resize: none;
+  outline: none;
+}
+.list,
+.list ul,
+.ui-border-b {
+  clear: both;
+}
+.list ul li {
+  padding-top: 20px;
+}

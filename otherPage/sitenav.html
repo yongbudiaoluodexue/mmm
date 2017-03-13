@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商城导航</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <!--bootstrap框架css-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--公用样式-->
+    <link rel="stylesheet/less" href="../css/base.min.css">
+    <!--自己的样式-->
+    <link rel="stylesheet/less" href="css/sitenav.min.css">
+    <!--less.js-->
+    <script src="../lib/less/less.min.js"></script>
+    <!--jquery包-->
+    <script src="../lib/jquery/jquery.js"></script>
+    <!--<script src="js/1.js"></script>-->
+</head>
+
+<body>
+    <div class="MMBAPP_TOP_BOX clearfix">
+        <div>
+            <a href="../index.html"></a>
+        </div>
+        <div>
+            <a href="../index.html"></a>
+        </div>
+        <h1>
+            商城导航
+        </h1>
+    </div>
+    <div class="box">
+        <div class="box2">
+
+        </div>
+    </div>
+    <div class="box3">
+        <a href="../index.html">首页&gt;</a>
+        <a href="#">商城导航</a>
+    </div>
+    <div class="dl">
+        <ul>
+            <a href="#">
+                <li>登录</li>
+            </a>
+            <a href="#">
+                <li>注册</li>
+            </a>
+            <a href="#">
+                <li><span>↑</span>&nbsp;返回顶部</li>
+            </a>
+        </ul>
+    </div>
+    <div class="foot">
+        <a href="#">手机APP下载</a> 慢慢买手机版—掌上比价平台
+        <br/> m.manmanbuy.com
+    </div>
+</body>
+
+<!--bootstrap框架js-->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<!--template模板-->
+<script src="../lib/template/template.js"></script>
+<!--自己的js-->
+<script src="js/sitenav.min.js"></script>
+<script type="text/html" id="menuTpl">
+    {{each result as value i }}
+    <a href="{{value.navHref}}">
+        <img src="{{value.navImg}}" alt=""> {{value.navTitle}}
+    </a>
+    {{/each}}
+</script>
+
+</html>

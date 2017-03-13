@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>比价选购</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <link rel="stylesheet/less" href="../css/base.min.css">
+    <link rel="stylesheet/less" href="css/category-product.min.css">
+    <script src="../lib/less/less.min.js"></script>
+</head>
+
+<body>
+    <header class="WY">
+        <div class="MMBAPP_TOP_BOX clearfix">
+            <div>
+                <a href="../index.html"></a>
+            </div>
+            <div>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="search clearfix">
+            <form action="#">
+                <input type="text" placeholder="请输入搜索内容">
+                <input type="button" value="搜索">
+            </form>
+        </div>
+    </header>
+    <!--导航栏 begin-->
+    <div class="nav" id="nav">
+        <ul class="clearfix">
+            <li class="current">综合</li>
+            <li>销量</li>
+            <li>价格</li>
+            <li>筛选</li>
+        </ul>
+    </div>
+    <!--导航栏 end-->
+    <!--商品列表展示 begin-->
+    <section class="productList">
+        <ul id="productList"></ul>
+    </section>
+    <!--商品列表展示 end-->
+    <!--分页 begin-->
+    <section class="page clearfix">
+        <div class="prev fl" id="prev">
+            <a href="javascript:;">上一页</a>
+        </div>
+        <div class="list fl">
+            <select id="list">
+            </select>
+        </div>
+        <div class="next fl" id="next">
+            <a href="javascript:;">下一页</a>
+        </div>
+    </section>
+    <!--分类 end-->
+    <div class="link">
+        <div class="title">相关链接：</div>
+        <div class="brand"><a href="#">电视机十大品牌</a></div>
+        <div class="praise"><a href="#">电视机口碑大全</a></div>
+    </div>
+
+    <footer>
+        <ul class="clearfix">
+            <li>
+                <a href="#">登录</a>
+            </li>
+            <li>
+                <a href="#">注册</a>
+            </li>
+            <li id="indexTop">
+                <a href="javascript:;">返回顶部 <i class="glyphicon glyphicon-arrow-up"></i> </a>
+            </li>
+        </ul>
+        <div>
+            <p>
+                <span>手机APP下载</span> 版慢慢买手机-掌上比价平台
+                <br/>m.manmanbuy.com
+            </p>
+        </div>
+    </footer>
+</body>
+<!--商品列表展示-->
+<script type="text/list" id="productionList">
+    {{each result as value index}}
+    <li class="item clearfix">
+        <a href="category-details.html?productId={{value.productId}}"></a>
+        <div class="pic fl">
+            {{#value.productImg}}
+        </div>
+        <div class="info">
+            <div class="title">
+                {{value.productName}}
+            </div>
+            <div class="price">
+                {{value.productPrice}}
+            </div>
+            <div class="other clearfix">
+                <div class="mall fl">{{value.productQuote}}</div>
+                <div class="sales fr">{{value.productCom}}</div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+
+</script>
+<script src="../lib/jquery/jquery.js"></script>
+<script src="../lib/template/template.js"></script>
+<script src="js/category-product.min.js"></script>
+
+</html>

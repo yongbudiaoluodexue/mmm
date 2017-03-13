@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>肯德基优惠券</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--公用样式-->
+    <link rel="stylesheet/less" href="../css/base.min.css">
+    <!--自己的样式-->
+    <link rel="stylesheet/less" href="css/coupon-product.less">
+    <link rel="stylesheet" href="css/coupon-product.min.css">
+    <!--less.js-->
+    <script src="../lib/less/less.min.js"></script>
+    <!--jquery包-->
+    <script src="../lib/jquery/jquery.js"></script>
+</head>
+
+<body>
+    <div class="MMBAPP_TOP_BOX clearfix">
+        <div>
+            <a href="../index.html"></a>
+        </div>
+        <div>
+            <a href="#"></a>
+        </div>
+        <h1>
+            肯德基优惠券
+        </h1>
+    </div>
+    <div class="box">
+        <div class="banner" id="b04">
+            <ul class="uls clearfix">
+
+            </ul>
+        </div>
+        <div class="jiantou" id="jiantou">
+            <a href="javascript:void(0);" class="unslider-arrow04 prev">
+                <img class="arrow left" id="al" src="images/arrowl.png" alt="prev" width="20" height="35">
+            </a>
+            <a href="javascript:void(0);" class="unslider-arrow04 next">
+                <img class="arrow right" id="ar" src="images/arrowr.png" alt="next" width="20" height="37">
+            </a>
+        </div>
+    </div>
+    <div class="ds">
+        <ul id="salesList">
+
+        </ul>
+    </div>
+
+</body>
+<!--bootstrap框架js-->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<!--template模板-->
+<script src="../lib/template/template.js"></script>
+<!--自己的js-->
+<script src="js/coupon-product.min.js"></script>
+<script type="text/html" id="menuTpl">
+    {{each result as value i }}
+    <li class="salesListBox">
+        <a href="javascript:void(0);" title="">
+            <div class="ai">
+                <div class="left">{{#value.couponProductImg}}</div>
+                <div class="right">
+                    <div class="title">{{value.couponProductName}}</div>
+                    <div class="jg">{{value.couponProductPrice}}</div>
+                    <div class="rq">{{value.couponProductTime}}</div>
+                </div>
+            </div>
+
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script type="text/html" id="muTpl">
+    {{each result as value i }}
+    <li style="width: 200px">{{#value.couponProductImg}}</li>
+    {{/each}}
+
+</script>
+
+</html>

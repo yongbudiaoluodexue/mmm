@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet/less" type="text/css" href="../css/base.min.css"/>
+    <link rel="stylesheet/less" type="text/css" href="css/inlanddiscount-details.less"/>
+    <link rel="stylesheet" href="css/inlanddiscount-details.min.css"/>
+    <title>神价推送</title>
+</head>
+<body>
+<header class="header00">
+    <a href="../index.html" class="header01"><s class="header010"><i class="header011">◇</i></s></a>
+    <span class="header02">国内折扣</span>
+    <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="header03">
+        <img src="http://m.manmanbuy.com/images/header_app.png" class="header030" alt="" />
+    </a>
+</header>
+<!--Main box-->
+<div class="container ">
+
+    <!--标题-->
+    <div class="lh-head head_a">
+        <h3></h3>
+        <h4></h4>
+    </div>
+
+    <!--信息-->
+    <div class="info">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span>
+            <a href=""></a>
+        </span>
+    </div>
+</div>
+<footer>
+    <div id="ctl00_Menu" class="nav" style="margin-top:20px;">
+        <a href="http://m.manmanbuy.com">
+            首页
+        </a> &nbsp;&gt;&nbsp;省钱快曝
+    </div>
+    <div id="ctl00_footerApp">
+        <div class="foot_top">
+            <a href="http://m.manmanbuy.com/login.aspx" class="col-xs-4">登录</a>
+            <a href="reg.aspx" class="col-xs-4">注册</a>
+            <a class="col-xs-4" href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15"> 返回顶部
+            </a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="http://m.manmanbuy.com/?o=download" onclick="trackEvent('footer头部下载');" style="color: Red;">
+                    手机APP下载
+                </a>
+                <a href="http://m.manmanbuy.com">
+                    慢慢买手机版
+                </a> -- 掌上比价平台
+            </p>
+
+            <p>m.manmanbuy.com
+                <img src="http://c.cnzz.com/wapstat.php?siteid=1256699064&amp;r=http%3a%2f%2fm.manmanbuy.com%2f&amp;rnd=283342317" width="0" height="0">
+
+            </p>
+        </div>
+    </div>
+</footer>
+<!--模板-->
+
+
+<script type="text/html" id="head">
+{{each result as value i}}
+<!--标题-->
+<div class="container head_a">
+<div class="lh-head">
+    <h3>{{value.productName}}</h3>
+    <h4>{{value.productPinkage}}</h4>
+</div>
+
+<!--信息-->
+    <div class="info">
+        <span>{{value.productFrom}}</span>
+        <span>{{value.productTime}}</span>
+        <span>{{value.productTips}}</span>
+        <span>
+            <a href="page.html" class="clickLh">{{value.productComCount}}</a>
+        </span>
+    </div>
+
+    <!--主体部分-->
+    <div class="vital">
+        <div class="txtvital">
+            <p>
+            {{#value.productImgSm}}
+                {{value.productInfo}}
+            </p>
+        </div>
+    </div>
+
+    <!--内容区域-->
+    <div class="contens">
+        <span class="contens_a clearfix">
+
+         {{#value.productImgLg}}
+            {{#value.productCity}}
+        </span>
+    </div>
+
+    <!--功能区-->
+    <form action="">
+        <input type="button" value="前往购买" class="lh_btn"/>
+    </form>
+
+    <!--评论区-->
+    <div class="comment">
+        {{#value.productComment}}
+    </div>
+
+    <!--底部区-->
+    <div class="erweima">
+        <img src="images/mmbweixin2.png" alt="" width="100%" height="auto"/>
+    </div>
+
+    <div class="lh_link">
+        <a href="">首页&gt;</a>
+        <a href="">超值推荐&gt;</a>
+        <a href="" class="lh_linkA">{{value.productInfo}}</a>
+    </div>
+</div>
+    {{/each}}
+</script>
+<script src="../lib/less/less.min.js"></script>
+<script src="../lib/jquery/jquery.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../lib/template/template.js"></script>
+<script src="js/inlanddiscount-details.min.js"></script>
+<script>
+    function clickL(){
+        alert("aaa");
+    }
+</script>
+</body>
+</html>

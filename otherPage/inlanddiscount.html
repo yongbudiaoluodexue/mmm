@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>慢慢买-国内折扣</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link rel="stylesheet" href="css/inlanddiscount.min.css" />
+</head>
+
+<body>
+    <header class="header00">
+        <a href="../index.html" class="header01"><s class="header010"><i class="header011">◇</i></s></a>
+        <span class="header02">国内折扣</span>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="header03">
+            <img src="http://m.manmanbuy.com/images/header_app.png" class="header030" alt="" />
+        </a>
+    </header>
+    <section class="section00">
+        <div class="cu-friend" id="cxdiv">
+            <ul class="border-img"></ul>
+        </div>
+    </section>
+    <footer>
+        <div id="ctl00_Menu" class="nav" style="margin-top:20px;">
+            <a href="http://m.manmanbuy.com">
+            首页
+        </a> &nbsp;&gt;&nbsp;省钱快曝
+        </div>
+        <div id="ctl00_footerApp">
+            <div class="foot_top">
+                <a href="http://m.manmanbuy.com/login.aspx" class="col-xs-4">登录</a>
+                <a href="reg.aspx" class="col-xs-4">注册</a>
+                <a class="col-xs-4" href="#" style="width: 40%; border: 0;">
+                    <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15"> 返回顶部
+                </a>
+            </div>
+            <div class="footer">
+                <p>
+                    <a href="http://m.manmanbuy.com/?o=download" onclick="trackEvent('footer头部下载');" style="color: Red;">
+                    手机APP下载
+                </a>
+                    <a href="http://m.manmanbuy.com">
+                    慢慢买手机版
+                </a> -- 掌上比价平台
+                </p>
+
+                <p>m.manmanbuy.com
+                    <img src="http://c.cnzz.com/wapstat.php?siteid=1256699064&amp;r=http%3a%2f%2fm.manmanbuy.com%2f&amp;rnd=283342317" width="0" height="0">
+
+                </p>
+            </div>
+        </div>
+    </footer>
+    <div style="position:fixed;right:0;bottom:30px;z-index:999">
+        <a href="http://m.manmanbuy.com/?o=download">
+            <img src="https://img.alicdn.com/imgextra/i2/379516416/TB2WepTeb1J.eBjSszcXXbFzVXa_!!379516416.png" width="60">
+        </a>
+    </div>
+
+</body>
+<script type="text/html" id="tpl">
+    {{each result as value i}}
+    <li>
+        <a href="inlanddiscount-details.html?productid={{value.productId}}" title="">
+            <div class="img">
+                {{#value.productImg}}
+            </div>
+            <div class="title">
+                {{value.productPrice}}
+            </div>
+            <div class="subtit">
+                {{value.productName}}
+            </div>
+            <div class="info">
+                <div class="mall">
+                    {{value.productFrom}} | {{value.productTime}}
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<!--引用jq-->
+<script src="../lib/jquery/jquery.js"></script>
+<!--引用bootstrap.js-->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+
+<!--引用template.js-->
+<script src="../lib/template/template.js"></script>
+<!--引用自己的js-->
+<script src="js/inlanddiscount.min.js"></script>
+
+</html>

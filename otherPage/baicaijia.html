@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白菜价</title>
+    <!--引入 图标-->
+    <link rel="shortcut icon" href="manmanbuyfavicon.ico">
+    <!--引入Bootstrap-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引入 图标-->
+    <link rel="stylesheet" href="../lib/bootstrap/fonts/glyphicons-halflings-regular.svg">
+    <!--引入 公共样式-->
+    <link rel="stylesheet" href="../css/base.min.css">
+    <!--引入 重置样式-->
+    <link rel="stylesheet" href="css/baicaijia.min.css">
+    <!--引入 LESS-->
+    <script src="../lib/less/less.min.js"></script>
+
+</head>
+
+<body>
+    <!--白菜头部-->
+    <header class="cabbage">
+        <a class="glyphicon glyphicon-menu-left" href="../index.html"></a>
+        <p>白菜价·淘宝内部卷</p>
+        <a href="javascript:;">
+
+        </a>
+    </header>
+    <nav>
+        <div id="glide">
+            <ul class="clearfix" id="glideUl">
+
+            </ul>
+            <span id="nav_button" class="glyphicon glyphicon-menu-hamburger"></span>
+            <form id="cabbageIndex">
+                <div>
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="text" placeholder="搜索商品即可查内部卷">
+                    <input type="button" value="搜索">
+                </div>
+            </form>
+        </div>
+    </nav>
+    <main>
+
+    </main>
+
+    <section id="secCommodity">
+
+    </section>
+    <footer>
+        <ul class="clearfix">
+            <li>
+                <a href="#">登录</a>
+            </li>
+            <li>
+                <a href="#">注册</a>
+            </li>
+            <li id="indexTop">
+                <a href="javascript:;">返回顶部 <i class="glyphicon glyphicon-arrow-up"></i> </a>
+            </li>
+        </ul>
+        <div>
+            <p>
+                <span>手机APP下载</span> 版慢慢买手机-掌上比价平台
+                <br/>m.manmanbuy.com
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<!--引入 JQ-->
+<script src="../lib/jquery/jquery.js"></script>
+
+<!--引入 template-->
+<script src="../lib/template/template.js"></script>
+<!--引入 BootstrapJS-->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/baicaijia.min.js"></script>
+
+<!--模板引擎-->
+<script type="text/html" id="navTop">
+    {{each result as value i}} {{if i==0}}
+    <li style="border-bottom: 3px solid #e4393c">
+        <a href="javascript:;">{{value.title}}</a><em>{{value.titleId}}</em></li>
+    {{else}}
+    <li>
+        <a href="javascript:;">{{value.title}}</a><em>{{value.titleId}}</em></li>
+    {{/if}} {{/each}}
+</script>
+<script type="text/html" id="product">
+    {{each result as value i}}
+    <div class="media">
+        <div class="media-left">
+            <a class="section_a" href="javascript:;">
+				{{ #value.productImg }}
+			</a>
+        </div>
+        <div class="media-body section_box">
+            <div class="media-heading">
+                <a href="javascript:;">
+                    <h4>{{#value.productName}}</h4>
+                    <span>{{#value.productPrice}}</span>
+                </a>
+                <div id="strip">
+                    {{#value.productCouponRemain}}
+                </div>
+                {{#value.productCoupon}}
+            </div>
+            <div class="btn">
+                {{#value.productHref}}
+            </div>
+        </div>
+        </a>
+    </div>
+
+    {{/each}}
+</script>

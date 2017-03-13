@@ -1,0 +1,120 @@
+html,
+body {
+  background: #cecece;
+}
+header {
+  width: 100%;
+  height: 45px;
+  background-color: #ff841d;
+  position: relative;
+}
+header > .arrow {
+  display: block;
+  font-size: 20px;
+  width: 34px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  padding: 8px 10px;
+  font-weight: 900;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  font-family: simsun;
+}
+header .title {
+  width: 100%;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+}
+.menu {
+  position: relative;
+  border-bottom: 1px solid black;
+}
+.menu .list {
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+.menu .list li {
+  width: 33.33%;
+  height: 50px;
+  background: #fff;
+  float: left;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+}
+.menu #search {
+  display: block;
+  float: right;
+  width: 45px;
+  height: 50px;
+  background: url("../images/search.jpg") no-repeat center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.menu .item {
+  width: 100%;
+  position: absolute;
+  top: 51px;
+  left: 0;
+  background-color: #fff;
+}
+.menu .item li {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px  solid #333 ;
+  line-height: 50px;
+  padding-left: 10px;
+}
+.area-item {
+  width: 100%;
+  position: absolute;
+  top: 51px;
+  left: 0;
+  background-color: #fff;
+}
+.area-item li {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px  solid #333 ;
+  line-height: 50px;
+  padding-left: 10px;
+}
+.price-item {
+  width: 100%;
+  position: absolute;
+  top: 51px;
+  left: 0;
+  background-color: #fff;
+  display: none;
+}
+.price-item li {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px  solid #333 ;
+  line-height: 50px;
+  padding-left: 10px;
+}
+.goods {
+  padding: 10px;
+}
+.goods li {
+  width: 50%;
+  float: left;
+  padding: 5px;
+}
+.goods li a {
+  display: block;
+  background-color: white;
+  width: 100%;
+}
+.goods li a a.text {
+  overflow: hidden;
+}
+.goods li a img {
+  width: 100%;
+}
